@@ -81,7 +81,7 @@ public class EmployeTest {
 	}
 	
 	
-	@ParameterizedTest(name = "matricile : {0}, performance {1} , nb anciennete {2} , temps partiel {3} , prime {4}")
+	@ParameterizedTest(name = "matricule : {0}, performance {1} , nb anciennete {2} , temps partiel {3} , prime {4}")
 	@CsvSource({ // Scénario de test
 	        "'T12344', 1 , 0 , 1 , 1000.0", // Reprendre les spec FONCTIONNIELLES et faire coller le cas à notre scénario
 	        "'T12344', 1 , 0 , 0.5 ,500.0",

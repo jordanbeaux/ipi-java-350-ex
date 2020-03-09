@@ -44,7 +44,14 @@ public class Employe {
     }
 
     public Integer getNombreAnneeAnciennete() {
-        return LocalDate.now().getYear() - dateEmbauche.getYear();
+    	// Modification suite aux tests unitaires => décision de mettre à 0 vient du fonctionnel (on aurait pu renvoyer null, exception etc)
+    	if(dateEmbauche != null && dateEmbauche.isBefore(LocalDate.now())) {
+    		return LocalDate.now().getYear() - dateEmbauche.getYear();
+    	}
+    	else {
+    		return 0;
+    	}
+        
     }
 
     public Integer getNbConges() {
@@ -79,6 +86,8 @@ public class Employe {
      *
      * @return la prime annuelle de l'employé en Euros et cents
      */
+    
+    // Elements pouvant poser pb : Matricule, Performance, dateEmbauche/nbAnneeAnciennete, tempsPartiel, prime
     public Double getPrimeAnnuelle(){
         //Calcule de la prime d'ancienneté
         Double primeAnciennete = Entreprise.PRIME_ANCIENNETE * this.getNombreAnneeAnciennete();

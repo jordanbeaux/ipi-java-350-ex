@@ -105,4 +105,9 @@ public class EmployeTest {
 		// Then
 	    Assertions.assertThat(primeCalculee).isEqualTo(prime);
 	}
+	
+	@Test
+	public void testAugmenterSalaire() {
+		
+	}
 }

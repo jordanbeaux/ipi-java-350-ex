@@ -205,16 +205,7 @@ public class EmployeServiceTest {
 		Employe e = new Employe();
 		
 		e.setMatricule(matricule);
-		
-		// 2ème employé pour avoir une idée de la moyenne mais pas nécessaire
-			//		String matricule2 = "C00670";
-			//		Long caTraite2 = 1000l;
-			//		Long objectifCa2 = 1500l;
-			//		
-			//		Employe e2 = new Employe();
-			//		
-			//		e2.setMatricule(matricule);
-				
+						
 		Mockito.when(employeRepo.findByMatricule("C00669")).thenReturn(e);
 		Mockito.when(employeRepo.avgPerformanceWhereMatriculeStartsWith("C")).thenReturn((double)1);
 		

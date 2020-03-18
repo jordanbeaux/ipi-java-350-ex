@@ -105,4 +105,36 @@ public class EmployeTest {
 		// Then
 	    Assertions.assertThat(primeCalculee).isEqualTo(prime);
 	}
+	
+	@Test
+	public void testAugmenterSalaireCN() {
+		
+		// Given
+		Employe employe = new Employe();
+		employe.setSalaire(1000.0);
+		
+		// When 
+		employe.augmenterSalaire(0.1);
+		// Then 
+		Assertions.assertThat(employe.getSalaire()).isEqualTo(1100.0);
+		
+	}
+	
+	@ParameterizedTest(name = "salaire : {0}, augmentation {1} , salaire augmenté {2}")
+	@CsvSource({ // Scénario de test
+	       " 1000, 0 , 1000.0", // Reprendre les spec FONCTIONNIELLES et faire coller le cas à notre scénario
+	       " 1000, -0.5 , 1000.0", // Cas où l'augmentation est négative
+	})
+	public void testSalaireGeneral(Double salaire, Double augmentation, Double salaireUp) {
+		//Given 
+		Employe employe = new Employe();
+		employe.setSalaire(salaire);
+		
+		// When
+		employe.augmenterSalaire(augmentation);
+		
+		// Then
+		Assertions.assertThat(salaireUp).isEqualTo(employe.getSalaire());
+		
+	}
 }

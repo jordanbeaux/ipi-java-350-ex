@@ -77,7 +77,7 @@ public class EmployeService {
 
         logger.debug("Avant sauvegarde : {}", employe.toString());
         employeRepository.save(employe);
-        // logger.info("Après sauvegarde : {}", employe.toString());
+        logger.info("Après sauvegarde : {}", employe.toString());
     }
 
     
@@ -137,6 +137,7 @@ public class EmployeService {
 
         //Calcul de la performance moyenne
         Double performanceMoyenne = employeRepository.avgPerformanceWhereMatriculeStartsWith("C");
+        
         if(performanceMoyenne != null && performance > performanceMoyenne){
             performance++;
         }

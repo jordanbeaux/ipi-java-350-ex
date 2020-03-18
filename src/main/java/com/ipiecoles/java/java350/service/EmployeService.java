@@ -77,7 +77,7 @@ public class EmployeService {
 
         logger.debug("Avant sauvegarde : {}", employe.toString());
         employeRepository.save(employe);
-        // logger.info("Après sauvegarde : {}", employe.toString());
+        logger.info("Après sauvegarde : {}", employe.toString());
     }
 
     
